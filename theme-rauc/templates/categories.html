@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Categories{%endblock%}
+
+{% block content %}
+<div class="container">
+<div class="row">
+    <div class="small-12 columns article">
+    {% for cat, articles in categories|sort %}
+        <h2><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></h2>
+        {% for a in articles %}
+              <a class="button" href="{{ SITEURL }}/{{ cat.url }}">See All&hellip;</a>
+        {% endfor %}
+        {% if not loop.last %}
+            <hr>
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock content %}

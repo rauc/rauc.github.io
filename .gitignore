@@ -1,0 +1,21 @@
+*.html
+
+# While /src holds the Website Source Code (incl. e.g. wml sources,
+# makefiles, temporary files, etc),  DocumentRoot is the actual
+# content for a website (can be used as Apache DocumentRoot or
+# can be copied to another webserver)
+
+/DocumentRoot/
+
+# /bin/ contains all the make- and sync-scripts for this
+# website.
+
+/bin/
+
+# /keys are needed for sync to the current webserver
+
+/keys/
+
+# /config/ contains the actual webserver config snippet for this site
+
+/config/

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta property="og:url" content="https://rauc.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ SITENAME }}">
+    <meta property="og:image" content="{{ SITEURL }}/images/RAUC_Logo_50.png">
+
+    <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css" rel="stylesheet">
+
+    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+                <a class="navbar-left" href="{{ SITEURL }}/index.html">
+                  <img src="{{ SITEURL }}/images/RAUC_Logo_50.png" height="80">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    {% if MENUITEMS %}
+                    {% for title,url in MENUITEMS %}
+                    {% if title == 'Documentation' or title == 'Blog' %}
+                    <li><a href="https://{{ url }}" target="_blank">{{ title }}</a></li>
+                    {% else %}
+                    <li{% if page is defined and page.url == url%} class="active"{% endif %}><a href="{{ SITEURL}}/{{ url }}">{{ title }}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                    {% if DISPLAY_PAGES_ON_MENU %}
+                    {% for p in pages %}
+                    <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <!--<div class="container">-->
+
+        {% block content %}
+        {% endblock %}
+
+        <!--</div>-->
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Stay connected</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="https://www.pengutronix.de/de/tags/rauc.html" target="_blank" class="btn-social"><i class="fa fa-fw fa-pencil-square"></i></a>
+                            </li>
+                            <li>
+                                <a rel="me" href="https://fosstodon.org/@rauc" target="_blank" class="btn-social"><i class="fa fa-fw fa-brands fa-mastodon"></i></a>
+                            </li>
+                            <li>
+                                <a href="mailto:rauc@pengutronix.de" class="btn-social"><i class="fa fa-fw fa-envelope-o"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <a href="http://pengutronix.de" target="_blank"><img alt="Pengutronix Logo" src="{{ SITEURL }}/images/ptx_logo_200.png"/></a>
+                        <span class="container">Copyright &copy; 2024 Pengutronix</span>
+                        <a href="{{ SITEURL}}/pages/imprint.html">Imprint</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- jQuery -->
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

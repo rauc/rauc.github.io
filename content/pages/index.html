@@ -1,0 +1,182 @@
+<html>
+    <head>
+        <title>Safe and Secure OTA Updates for Embedded Linux</title>
+        <meta name="date" content="2017-03-27 17:32" />
+        <meta name="authors" content="Enrico Joerns" />
+        <meta name="summary" content="Safe and secure embedded Linux updates" />
+        <meta name="save_as" content="index.html" />
+        <meta name="template" content="empty_page" />
+    </head>
+    <body>
+<!-- Jumbotron Header -->
+<header id="rauc-header">
+  <div class="container">
+    <h1>Safe and Secure OTA Updates for Embedded Linux!</h1>
+    <p>
+    RAUC is a lightweight update client that runs on your Embedded Linux device and
+    reliably controls the procedure of updating your device with a new firmware
+    revision. RAUC is also the tool on your host system that lets you create, inspect
+    and modify update artifacts for your device.
+    </p>
+    <p>
+    RAUC is fully open-source and licensed under <a style="color:lightgray" href="https://github.com/rauc/rauc/blob/master/COPYING">LGPL-2.1</a>.
+    </p>
+    <p class="text-center">
+    <a class="btn btn-outline btn-lg" href="pages/download.html">
+      <i class="fa fa-download" aria-hidden="true"></i>&nbsp;Download</a>
+    <a class="btn btn-outline btn-lg" href="https://github.com/rauc" target="_blank">
+      <i class="fa fa-github" aria-hidden="true"></i>&nbsp;Visit on GitHub</a>
+    </p>
+    <!--<p class="text-center">v0.1</p>-->
+  </div>
+</header>
+
+<section class="container">
+  <div class="row item">
+    <div class="col-sm-4 text-center">
+      <span class="fa fa-key fa-5x"></span>
+      <h2>Secure by Design</h2>
+      <p>RAUC uses X.509 cryptography to sign and verify your update
+      bundles</p>
+    </div>
+    <div class="col-sm-4 text-center">
+      <span class="fa fa-diamond fa-5x"></span>
+      <h2>Robust</h2>
+      <p>Fail-safe full system updates of redundant (A/B) systems.
+      Also recovery systems are supported.</p>
+    </div>
+    <div class="col-sm-4 text-center">
+      <span class="fa fa-puzzle-piece fa-5x"></span>
+      <h2>Flexible</h2>
+      <p>RAUC requires no fixed device / partition setup but instead
+      can be adapted to your needs</p>
+    </div>
+  </div>
+  <div class="row item">
+    <div class="col-sm-4 text-center">
+      <span class="fa fa-lock fa-5x"></span>
+      <h2>Encryption</h2>
+      <p>Optional asymmetric per-recipient encryption supported</p>
+    </div>
+    <div class="col-sm-4 text-center">
+      <span class="fa fa-cloud-download fa-5x"></span>
+      <h2>HTTP(S) Streaming</h2>
+      <p>Allows installing updates over HTTP(S) without intermediate on-target
+      storage</p>
+    </div>
+    <div class="col-sm-4 text-center">
+      <span class="fa fa-play fa-5x"></span>
+      <h2>Application Integration</h2>
+      <p>D-Bus API methods for triggering Installation, obtaining progress,
+      or inspecting the system state allow tight integration with custom
+      applications.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Title -->
+<section class="container">
+  <div class="row item">
+    <div class="col-lg-6 text-left">
+      <h2>Start Using RAUC</h2>
+      <p>
+      The best ways to dive into RAUC are the first three chapter of the <a href="http://rauc.readthedocs.io/" target="_blank">RAUC documentation</a>.
+      Alternatively, you can find a list of talks about RAUC on our <a href="pages/media.html">media</a> page.
+      </p>
+      <p>
+      For integrating RAUC into your project, using an embedded Linux build
+      system such as <a href="https://www.yoctoproject.org/" target="_blank">Yocto</a>,
+      <a href="https://buildroot.org/" target="_blank">Buildroot</a> or <a href="https://ptxdist.org/" target="_blank">PTXdist</a>
+      is highly recommended.
+      </p>
+      <p>
+      General hints for integrating RAUC are available in the
+      <a href="https://rauc.readthedocs.io/en/latest/integration.html" target="_blank">Integration</a> chapter of the RAUC documentation.
+      </p>
+    </div>
+    <div class="col-lg-6 text-left">
+      <h2>Build System / Distro Support</h2>
+      <div class="row">
+        <div class="col-sm-4 opt-item">
+          <div style="height:75px;">
+            <img class="img-responsive center-block" style="max-height:100%;" alt="Yocto Logo" src="images/yocto.png"/>
+          </div>
+          <div class="caption">
+            <p><a href="https://github.com/rauc/meta-rauc" target="_blank">meta-rauc</a> layer for Yocto/OE integration</p>
+          </div>
+        </div>
+        <div class="col-sm-4 opt-item">
+          <div style="height:75px;">
+            <img class="img-responsive center-block" style="max-height:100%;" alt="Buildroot Logo" src="images/buildroot_logo.png"/>
+          </div>
+          <div class="caption">
+            <p>RAUC is supported by <a href="https://github.com/buildroot/buildroot/blob/master/package/rauc/Config.in" target="_blank">Buildroot</a></p>
+          </div>
+        </div>
+        <div class="col-sm-4 opt-item">
+          <div style="height:75px;">
+            <img class="img-responsive center-block" style="max-height:100%;" alt="PTXdist Logo" src="images/ptxdist_logo.png"/>
+          </div>
+          <div class="caption">
+            <p>Full RAUC support in <a href="https://git.pengutronix.de/cgit/ptxdist/tree/rules/rauc.in" target="_blank">PTXdist</a>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 opt-item">
+          <div style="height:75px;">
+            <img class="img-responsive center-block" style="max-height:100%;" alt="ArchLinux logo" src="images/archlinux-logo.png"/>
+          </div>
+          <div class="caption">
+            <p>ArchLinux provides a <a href="https://archlinux.org/packages/community/x86_64/rauc/" target="_blank">RAUC package</a></p>
+          </div>
+        </div>
+        <div class="col-sm-4 opt-item">
+          <div style="height:75px;">
+            <img class="img-responsive center-block" style="max-height:100%;" alt="Debian logo" src="https://www.debian.org/logos/openlogo-nd-100.png"/>
+          </div>
+          <div class="caption">
+            <p>RAUC packages available for <a href="https://packages.debian.org/bookworm/rauc" target="_blank">Debian</a> and <a href="https://packages.ubuntu.com/lunar/rauc" target="_blank">Ubuntu</a></p>
+          </div>
+        </div>
+        <div class="col-sm-4 opt-item">
+          <div style="height:75px;">
+            <img class="img-responsive center-block" style="max-height:100%;" alt="NixOS" src="https://github.com/NixOS/nixos-artwork/blob/master/logo/nixos.svg.png?raw=true"/>
+          </div>
+          <div class="caption">
+            <p>RAUC packages available for <a href="https://search.nixos.org/packages?show=rauc" target="_blank">NixOS</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="row item">
+    <div class="col-lg-12 text-center">
+      <h2>Need Some Help?</h2>
+      <p>For community support, join the <a href="https://app.element.io/#/room/#rauc:matrix.org">#rauc</a> Matrix channel,
+      open a GitHub <a href="https://github.com/rauc/rauc/discussions">Discussion</a>,
+      post your question to the <a href="pages/support.html">mailing list</a></p>
+      <p>For submitting bug reports, use the GitHub <a href="https://github.com/rauc/rauc/issues">Issue Tracker</a></p>
+      <p>For commercial support contact Pengutronix via
+      <a href="mailto:sales@pengutronix.de">sales@pengutronix.de</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="row last-item">
+    <div class="col-lg-12 text-center">
+      <h2>Contributing</h2>
+      <p>Contribute bug fixes or new features as GitHub <a href="https://github.com/rauc/rauc/pulls">Pull Requests</a>.
+      <p>Bring up and discuss ideas via <a href="https://app.element.io/#/room/#rauc:matrix.org">#rauc</a>,
+      GitHub <a href="https://github.com/rauc/rauc/discussions">Discussions</a>,
+      or GitHub <a href="https://github.com/rauc/rauc/pulls">Pull Requests</a>.</p>
+    </div>
+  </div>
+</section>
+
+    </body>
+</html>
